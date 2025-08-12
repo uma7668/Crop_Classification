@@ -162,7 +162,7 @@ if uploaded_file is not None:
     
 if st.button("Predict"):
         
-        img = image.resize((32, 32))
+        img = image.resize((128, 128))
         img_array = np.array(img) / 255.0
         img_array = np.expand_dims(img_array, axis=0)
 
@@ -173,4 +173,5 @@ if st.button("Predict"):
 
         # Show results
         st.success(f"Prediction: **{predicted_class}**")
+
         st.info(f"Confidence: **{confidence:.2f}%**")
